@@ -14,5 +14,4 @@ o.expandtab = true
 o.shiftwidth = 2
 o.tabstop = 2
 o.encoding = "UTF-8"
-o.hidden = true
 o.termguicolors = true
