@@ -5,7 +5,6 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim",
-    { "3rd/image.nvim", opts = {} },
     {
       "s1n7ax/nvim-window-picker",
       version = "2.*",
@@ -35,6 +34,9 @@ return {
       },
     })
     require("neo-tree").setup({
+      source_selector = {
+        truncation_character = "...",
+      },
       close_if_last_window = true,
       popup_border_style = "rounded",
       enable_git_status = true,
@@ -51,6 +53,9 @@ return {
         return a.path < b.path
       end,
       default_container_configs = {
+        indent = {
+          indent_size = 4,
+        },
         container = {
           enable_character_fade = true,
         },
@@ -66,7 +71,7 @@ return {
         git_status = {
           symbols = {
             --- change type
-            added = " ",
+            added = " ",
             modified = " ",
             --- status type
             untracked = " ",
@@ -79,7 +84,7 @@ return {
       },
       window = {
         position = "left",
-        width = 40,
+        width = 32,
       },
       filesystem = {
         hide_gitignore = true,
@@ -88,7 +93,6 @@ return {
         },
       },
     })
-    vim.keymap.set("n", "<leader>e", "<Cmd>Neotree reveal<CR>")
   end,
   lazy = false,
   ---@module "neo-tree"
