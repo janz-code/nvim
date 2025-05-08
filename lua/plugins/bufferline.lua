@@ -7,7 +7,7 @@ return {
 	config = function()
 		require("bufferline").setup({
 			options = {
-				mode = "tabs",
+				mode = "buffers",
 				numbers = "ordinal",
 				always_show_bufferline = true,
 				diagnostics = true,
@@ -16,7 +16,16 @@ return {
 				buffer_close_icon = "󰅙 ",
 				close_icon = "󰅙 ",
 				close_command = function(bufnum)
-					require("bufdelete").bufdelete(bufnum)
+					require("bufdelete").bufdelete(bufnum, false)
+				end,
+				right_mouse_command = "buffer %d",
+				left_mouse_command = "buffer %d",
+				max_name_length = 15,
+				max_prefix_length = 5,
+				truncate_names = true,
+				diagnostics_update_on_event = true,
+				diagnostics_indicator = function(count, level, errors, ctx)
+					return "(" .. count .. ")"
 				end,
 				offsets = {
 					{
@@ -25,6 +34,7 @@ return {
 						highlight = "Directory",
 						text_align = "left",
 						padding = 1,
+						separator = true,
 					},
 				},
 				color_icons = true,
