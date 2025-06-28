@@ -1,0 +1,5 @@
+require("config/lazy")
+require("config/settings")
+vim.cmd.colorscheme("catppuccin")
+require("config/p-settings")
+require("config/keymaps")
