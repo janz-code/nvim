@@ -1,5 +1,5 @@
 require("config/lazy")
-require("config/settings")
 vim.cmd.colorscheme("catppuccin")
+require("config/settings")
 require("config/p-settings")
 require("config/keymaps")
