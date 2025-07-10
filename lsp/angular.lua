@@ -32,13 +32,6 @@ end
 local default_probe_dir = get_probe_dir()
 local default_angular_core_version = get_angular_core_version()
 
--- structure should be like
--- - $EXTENSION_PATH
---   - @angular
---     - language-server
---       - bin
---         - ngserver
---   - typescript
 local ngserver_exe = vim.fn.exepath("ngserver")
 local ngserver_path = #(ngserver_exe or "") > 0 and vim.fs.dirname(vim.uv.fs_realpath(ngserver_exe)) or "?"
 local extension_path = vim.fs.normalize(vim.fs.joinpath(ngserver_path, "../../../"))
@@ -51,7 +44,7 @@ local ng_probe_dirs = vim.iter({ extension_path, default_probe_dir })
 	end)
 	:join(",")
 
-return {
+vim.lsp.config["angularls"] = {
 	cmd = {
 		"ngserver",
 		"--stdio",

@@ -16,7 +16,6 @@ return {
 	config = function()
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("blink.cmp").get_lsp_capabilities({}, false))
-		local lspconfig = require("lspconfig")
-		lspconfig["lua_ls"].setup({ capabilities = capabilities })
+		vim.lsp.config("*", { capabilities = capabilities })
 	end,
 }
