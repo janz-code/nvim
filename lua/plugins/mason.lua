@@ -14,7 +14,6 @@ return {
 				"astro",
 				"basedpyright",
 				"bashls",
-				"csharp_ls",
 				"clangd",
 				"cmake",
 				"css_variables",

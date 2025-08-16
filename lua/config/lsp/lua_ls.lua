@@ -1,4 +1,4 @@
-vim.lsp.config("lua_ls", {
+return {
 	cmd = { "lua-language-server" },
 	filetypes = { "lua" },
 	root_markers = {
@@ -40,4 +40,4 @@ vim.lsp.config("lua_ls", {
 	settings = {
 		Lua = {},
 	},
-})
+}
