@@ -8,6 +8,7 @@ return {
 		"typescript",
 		"typescriptreact",
 		"typescript.tsx",
+		"astro",
 	},
 	root_markers = { "tsconfig.json", "jsconfig.json", "package.json", ".git" },
 	handlers = {
