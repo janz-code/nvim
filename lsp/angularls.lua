@@ -44,7 +44,7 @@ local ng_probe_dirs = vim.iter({ extension_path, default_probe_dir })
 	end)
 	:join(",")
 
-vim.lsp.config["angularls"] = {
+return {
 	cmd = {
 		"ngserver",
 		"--stdio",

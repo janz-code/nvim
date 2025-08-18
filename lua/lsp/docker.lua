@@ -5,9 +5,9 @@ vim.api.nvim_create_autocmd("BufRead", {
 		local filename = vim.api.nvim_buf_get_name(bufnr)
 		if filename:match("-compose%.ya?ml$") then
 			vim.bo[args.buf].filetype = "yaml.docker-compose"
-			vim.lsp.start(require("config.lsp.docker_compose_ls"))
+			vim.lsp.enable("docker_compose_ls")
 		else
-			vim.lsp.start(require("config.lsp.dockerls"))
+			vim.lsp.enable("dockerls")
 		end
 	end,
 })
